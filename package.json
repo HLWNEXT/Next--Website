@@ -18,7 +18,8 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.3.0",
     "sass": "^1.52.1",
-    "sass-loader": "^13.0.0"
+    "sass-loader": "^13.0.0",
+    "webkit": "^0.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

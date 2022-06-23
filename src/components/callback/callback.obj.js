@@ -16,7 +16,7 @@ export default class Callback extends React.Component {
   updateStatus(){
     const queryParams = new URLSearchParams(window.location.search);
     const term = queryParams.get("code");
-    console.log(term);
+    // console.log(term);
 
     if (term == null || term == ""){
       this.state.current = 0;

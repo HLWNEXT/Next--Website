@@ -2,7 +2,7 @@
 @import '../styles/styles.general.scss';
 @import '../styles/styles.colors.scss';
 
-@media(max-width: $sizeMobile) {
+@media(max-width: $sizeLaptop) {
 
   .app {
     background-color: $next__white;
@@ -13,13 +13,9 @@
   }
 
   .app__content {
-    background-color: $next__blue;
+    background-color: $next__white;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 50px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
   }
 }

@@ -1,7 +1,9 @@
 @import '../../styles/styles.fonts.components.scss';
 @import '../../styles/styles.general.scss';
 
-@media(min-width: $sizeDesktop) {
+@media only screen
+and (min-width: 501px) 
+and (max-width: $sizeDesktop) {
   .app__content {
     width: 100%;
     height: 100%;
@@ -10,6 +12,7 @@
   .callback {
     width: 100%;
     height: 100%;
+    background-color: #06036d;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -58,13 +61,13 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         justify-self: center;
         align-self: center;
-        grid-column: 1/3;
         grid-row: 1/3;
-        animation: shake 2s infinite;      
+        grid-column: 1/3;
+        animation: shake 2s cubic-bezier(.1,2,.1,2) infinite;
       }
 
       &__Success {
@@ -72,12 +75,12 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         justify-self: center;
         align-self: center;
-        grid-column: 1/3;
         grid-row: 1/3;
+        grid-column: 1/3;
         animation: spin 8s linear infinite;
       }
 
@@ -146,7 +149,7 @@
         grid-column: 1/3;
         justify-self: center;
         align-self: end;
-        margin-bottom: 9rem;
+        margin-bottom: 6rem;
       }
 
       &__Success {
@@ -157,7 +160,7 @@
         grid-column: 1/3;
         justify-self: center;
         align-self: end;
-        margin-bottom: 9rem;
+        margin-bottom: 6rem;
       }
     }
   }

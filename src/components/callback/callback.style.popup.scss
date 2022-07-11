@@ -1,15 +1,18 @@
 @import '../../styles/styles.fonts.components.scss';
 @import '../../styles/styles.general.scss';
 
-@media(min-width: $sizeDesktop) {
+@media only screen
+and (max-width: 500px) {
   .app__content {
     width: 100%;
     height: 100%;
+    // border: 10px red solid;
   }
 
   .callback {
     width: 100%;
     height: 100%;
+    background-color: #06036d;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -27,29 +30,27 @@
     .callback__title {
       @include soft__white__title;
       grid-column: 1/3;
-      grid-row: 2/3;
-      font-size: 8rem;
+      grid-row: 3/4;
+      font-size: 4rem;
       justify-self: center;
-      align-self: end;
     }
 
     .callback__subtitle {
       @include soft__white__title;
       grid-column: 1/3;
       grid-row: 3/4;
-      margin-top: 3rem;
-      font-size: 2.4rem;
+      margin-top: 6rem;
+      font-size: 1.4rem;
       justify-self: center;
-      align-self: start;
     }
 
     .callback__contact {
       @include soft__white__title;
       grid-column: 1/3;
       grid-row: 3/4;
-      font-size: 2.4rem;
+      font-size: 1.4rem;
       justify-self: center;
-      align-self: start;
+      margin-top: 8rem;
     }
 
     .callback__emoticon {
@@ -58,13 +59,14 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         justify-self: center;
         align-self: center;
+        margin-bottom: 4rem;
         grid-column: 1/3;
         grid-row: 1/3;
-        animation: shake 2s infinite;      
+        animation: shake 2s cubic-bezier(.36,.07,.19,.97) infinite;
       }
 
       &__Success {
@@ -72,12 +74,14 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         justify-self: center;
         align-self: center;
+        margin-bottom: 4rem;
         grid-column: 1/3;
         grid-row: 1/3;
+        align-self: end;
         animation: spin 8s linear infinite;
       }
 
@@ -114,12 +118,13 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: 60px;
-        width: 60px;
+        height: 30px;
+        width: 30px;
         justify-self: center;
         align-self: center;
         grid-row: 3/4;
         grid-column: 1/3;
+        margin-top: 6rem;
       }
 
       &__Success {
@@ -127,12 +132,13 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: 60px;
-        width: 60px;
+        height: 30px;
+        width: 30px;
         justify-self: center;
         align-self: center;
         grid-row: 3/4;
         grid-column: 1/3;
+        margin-top: 6rem;
       }
     }
 
@@ -140,24 +146,24 @@
 
       &__Failure {
         @include soft__coral__title;
-        font-size: 2.4rem;
+        font-size: 1.6rem;
         justify-self: start;
         grid-row: 3/4;
         grid-column: 1/3;
         justify-self: center;
         align-self: end;
-        margin-bottom: 9rem;
+        margin-bottom: 3rem;
       }
 
       &__Success {
         @include soft__blue__title;
-        font-size: 2.4rem;
+        font-size: 1.6rem;
         justify-self: start;
         grid-row: 3/4;
         grid-column: 1/3;
         justify-self: center;
         align-self: end;
-        margin-bottom: 9rem;
+        margin-bottom: 3rem;
       }
     }
   }

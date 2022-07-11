@@ -25,12 +25,12 @@
   @extend %soft__white__subtitle;
 }
 
-@media(max-width: $sizeMobile) {
+@media(max-width: $sizeLaptop) {
   .app__content {
     // border: 10px red solid;
   }
 
-  .callback {
+  .about {
     grid-row: 1 / -1;
     grid-column: 1 / -1;
     display: grid;
@@ -57,14 +57,14 @@
       background-color: $next__blue;
     }
 
-    .callback__lefthalfgrid {
+    .about__lefthalfgrid {
       grid-row: 1 / 2;
       grid-column: 1 / -1;
       display: grid;
       grid-template-rows: auto;
       grid-template-columns: auto;
 
-      .callback__icon {
+      .about__icon {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         height: 100%;
@@ -74,7 +74,7 @@
         align-self: center;
 
         &__experiences {
-          @extend .callback__icon;
+          @extend .about__icon;
           background-image: url('https://res.cloudinary.com/next-hlw/image/upload/v1586986666/icon/monitoricon_q0fggh.svg');
           background-size: auto 90%;
           background-position: center;
@@ -82,7 +82,7 @@
         }
 
         &__elevate {
-          @extend .callback__icon;
+          @extend .about__icon;
           background-image: url('https://res.cloudinary.com/next-hlw/image/upload/v1586986666/icon/rocketicon_i9yyh0.svg');
           background-size: auto 100%;
           background-position: center;
@@ -90,7 +90,7 @@
         }
 
         &__insight {
-          @extend .callback__icon;
+          @extend .about__icon;
           background-image: url('https://res.cloudinary.com/next-hlw/image/upload/v1587575016/icon/coralgoggle_zthntw.svg');
           background-size: auto 85%;
           background-position: center;
@@ -98,7 +98,7 @@
         }
 
         &__invent {
-          @extend .callback__icon;
+          @extend .about__icon;
           background-image: url('https://res.cloudinary.com/next-hlw/image/upload/v1586987870/icon/flaskicon_z3xxkm.svg');
           background-size: auto 100%;
           background-position: center;
@@ -106,7 +106,7 @@
         }
 
         &__engage {
-          @extend .callback__icon;
+          @extend .about__icon;
           background-image: url('https://res.cloudinary.com/next-hlw/image/upload/v1586987870/icon/bubbleicon_eygwwe.svg');
           background-size: auto 100%;
           background-position: center;
@@ -115,7 +115,7 @@
       }
     }
 
-    .callback__righthalfgrid {
+    .about__righthalfgrid {
 
       grid-row: 2 / 5;
       grid-column: 1 / -1;
@@ -123,7 +123,7 @@
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-columns: 1fr;
 
-      .callback__title {
+      .about__title {
         @include soft__white__title;
         font-size: 30px;
         grid-row: 1/2;
@@ -132,7 +132,7 @@
         align-self: end;
       }
 
-      .callback__description {
+      .about__description {
         color: $next__white;
         font-size: 12px;
         font-weight: 400;
@@ -142,7 +142,7 @@
         padding-top: 18px;
       }
 
-      .callback__seehow {
+      .about__seehow {
         // @extend .soft__white__title;
         font-size: 12px;
         padding-top: 100px;
@@ -154,7 +154,7 @@
         height: 120px;
       }
 
-      .callback__previous {
+      .about__previous {
         // @extend .soft__white__title;
         padding-top: 100px;
         font-size: 12px;
@@ -165,7 +165,7 @@
         height: 120px;
       }
 
-      .callback__next {
+      .about__next {
         // @extend .soft__white__title;
         padding-top: 100px;
         font-size: 12px;

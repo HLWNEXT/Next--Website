@@ -1,74 +1,43 @@
 import React from 'react';
 import './callback.style.desktop.scss';
-import './callback.style.mobile.scss';
+import './callback.style.laptop.scss';
+import './callback.style.popup.scss';
 import data from '../../data/data.callback.json';
-import { InternalLinkHighlighted } from '../subcomponents/special_link/links.object';
 
 export default class Callback extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: 0,
-      start: 0,
-      end: data.callbackData.length
+      current: 1, 
     }
-    this.cycle = this.cycle.bind(this);
-    this.reverse = this.reverse.bind(this);
+    this.updateStatus = this.updateStatus.bind(this);
   }
+  
+  updateStatus(){
+    const queryParams = new URLSearchParams(window.location.search);
+    const term = queryParams.get("code");
+    console.log(term);
 
-  cycle() {
-    const { start, end, current } = this.state;
-    let count = current + 1;
-
-    if(count > 4) {
-      count = 0;
+    if (term == null || term == ""){
+      this.state.current = 0;
     }
-    
-    this.setState({
-      current: count
-    });
-  }
-
-  reverse() {
-    const { start, end, current } = this.state;
-    let count = current - 1;
-
-    if(count < 0) {
-      count = 4;
-    }
-    
-    this.setState({
-      current: count
-    });
   }
   
   render() {
+
     const info = data.callbackData;
     const current = info[this.state.current];
-    const next = "Next";
-    const seehow = "See How";
-    console.log(this.state.current);
+    
+    this.updateStatus();
 
     return (
-      <div className={`callback callback__${current.shortName}`}>
-
-        <div className="callback__lefthalfgrid">
-          <div className={`callback__icon callback__icon__${current.shortName}`}/>
-        </div>
-
-        <div className="callback__righthalfgrid">
-          <div className="callback__title"><p>{current.name}</p></div>
-          <div className="callback__description"><p>{current.description}</p></div>
-          <div className="callback__seehow">
-            <InternalLinkHighlighted value={seehow} destination={current.link} />
-          </div>
-          <div className="callback__previous" onClick={ this.reverse }>
-            <p>Previous</p>
-          </div>
-          <div className="callback__next" onClick={ this.cycle }>
-            <p>Next</p>
-          </div>
-        </div>
+      <div className={`callback callback__${current.status}`}>
+        <div className='callback__title'>{current.Title}</div>
+        <div className='callback__subtitle'>{current.description}</div>
+        <div className='callback__contact'>{current.contact}</div>
+        <div className={`callback__emoticon__${current.status}`}></div>
+        <div className={`callback__ticketButtonText__${current.status}`}>Ticket</div>
+        <a className={`callback__ticketButtonImg__${current.status}`} href='https://hlw.atlassian.net/servicedesk/customer/portal/2'></a>
       </div>
     )
   }

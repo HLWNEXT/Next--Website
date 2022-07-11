@@ -9,7 +9,7 @@
   @extend %soft__white__title;
 }
 
-@media(max-width: $sizeMobile) {
+@media(max-width: $sizeLaptop) {
 
   .home {
     @include full_width_height;
